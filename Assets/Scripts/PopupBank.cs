@@ -119,6 +119,8 @@ public class PopupBank : MonoBehaviour
     {
         string filePath = Path.Combine(saveDirectory, transferId.text + ".json");
 
+        //자신한테 보내는 예외처리 까지 만들면 완벽
+
         if (!File.Exists(filePath))
         {
             Debug.Log("대상이 없습니다.");

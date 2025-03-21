@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
         string filePath = Path.Combine(saveDirectory, id + ".json");
 
+
         if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath); //파일 읽고
