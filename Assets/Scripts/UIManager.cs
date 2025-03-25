@@ -30,12 +30,12 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void OnBankPopUp()
+    public void OnBankPopUp() //은행 화면
     {
         objPopUpLogin.SetActive(false);
         objPopUpBank.SetActive(true);
     }
-    public void OnLoginPopUp()
+    public void OnLoginPopUp() // 로그인 화면
     {
         objPopUpLogin.SetActive(true);
         objPopUpBank.SetActive(false);

@@ -41,25 +41,25 @@ public class PopupBank : MonoBehaviour
         }
     }
 
-    public void OpenDepositUI()
+    public void OpenDepositUI() //입금 UI
     {
         depositUI.SetActive(true);
         atm.SetActive(false);
     }
 
 
-    public void OpenWithdrawalUI()
+    public void OpenWithdrawalUI() //출금 UI
     {
         withdrawalUI.SetActive(true);
         atm.SetActive(false);
     }
-    public void OpenTransferUI()
+    public void OpenTransferUI() //송금 UI
     {
         transferUI.SetActive(true);
         atm.SetActive(false);
     }
 
-    public void BackToATM() 
+    public void BackToATM() //입금 , 출금 , 송금 UI
     {
         atm.SetActive(true);
         depositUI.SetActive(false);
@@ -67,7 +67,7 @@ public class PopupBank : MonoBehaviour
         transferUI.SetActive(false);
     }
 
-    public void Deposit(int money)
+    public void Deposit(int money) //입금 함수
     {
         if(GameManager.Instance.userData.cash-money>=0)
         {
@@ -79,7 +79,7 @@ public class PopupBank : MonoBehaviour
 
     }
 
-    public void DepositCustom()
+    public void DepositCustom() //직접 입력 입금
     {
         int money;
         if(int.TryParse(depositInputField.text, out money))
@@ -92,7 +92,7 @@ public class PopupBank : MonoBehaviour
         }
     }
 
-    public void Withdrawal(int money)
+    public void Withdrawal(int money) //출금 함수
     {
         if (GameManager.Instance.userData.balance - money >= 0)
         {
@@ -102,7 +102,7 @@ public class PopupBank : MonoBehaviour
             GameManager.Instance.SaveUserData();
         }
     }
-    public void WithdrawalCustom()
+    public void WithdrawalCustom() //직접 출금 입력
     {
         int money;
         if (int.TryParse(withdrawalInputField.text, out money))
@@ -115,7 +115,7 @@ public class PopupBank : MonoBehaviour
         }
     }
 
-    public void Transfer()
+    public void Transfer() //송금
     {
         string filePath = Path.Combine(saveDirectory, transferId.text + ".json");
 
